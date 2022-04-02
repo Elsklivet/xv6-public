@@ -16,6 +16,11 @@ sys_fork(void)
 void sys_halt(void)
 {
   cprintf("hlt\n");
+  char *p = "Shutdown"; // this somehow does literally nothing
+  while(*p) {
+    outw(0xB004, 0x2000);
+    p++;
+  }
   hlt();
 }
 
@@ -94,4 +99,11 @@ sys_uptime(void)
   xticks = ticks;
   release(&tickslock);
   return xticks;
+}
+
+// List all processes running on the machine
+int sys_ps(void) 
+{ 
+  procdump(); 
+  return 0;
 }

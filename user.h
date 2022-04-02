@@ -25,6 +25,7 @@ int sleep(int);
 int uptime(void);
 // My syscalls
 void halt(void);
+int ps(void);
 
 // ulib.c
 int stat(const char*, struct stat*);

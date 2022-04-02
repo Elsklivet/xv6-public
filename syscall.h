@@ -22,3 +22,4 @@
 #define SYS_close  21
 // My syscalls
 #define SYS_halt   22
+#define SYS_ps     23
