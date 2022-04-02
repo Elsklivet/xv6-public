@@ -13,6 +13,12 @@ sys_fork(void)
   return fork();
 }
 
+void sys_halt(void)
+{
+  cprintf("hlt\n");
+  hlt();
+}
+
 int
 sys_exit(void)
 {
