@@ -116,7 +116,7 @@ pushcli(void)
 void
 popcli(void)
 {
-  if(readeflags()&FL_IF)
+  if(readeflags() & FL_IF)
     panic("popcli - interruptible");
   if(--mycpu()->ncli < 0)
     panic("popcli");
